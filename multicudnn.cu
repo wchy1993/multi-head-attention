@@ -40,7 +40,7 @@ void multihead_attention(cudnnHandle_t cudnn, cublasHandle_t cublas, float *quer
     cudaMalloc((void **)&K, tensor_size);
     cudaMalloc((void **)&V, tensor_size);
     cudaMalloc((void **)&scores, batch_size * num_heads * seq_len * seq_len * sizeof(float));
-        cudaMalloc((void **)&Q, tensor_size);
+    cudaMalloc((void **)&Q, tensor_size);
     cudaMalloc((void **)&K, tensor_size);
     cudaMalloc((void **)&V, tensor_size);
     cudaMalloc((void **)&scores, batch_size * num_heads * seq_len * seq_len * sizeof(float));
@@ -99,8 +99,7 @@ int main() {
     cudaMalloc((void **)&WO, weights_size);
 
     // Initialize the weight matrices with appropriate values
-    // For example, you can use random numbers or load data from a file
-    // ...
+ 
 
     // Create CUDA events for timing
     cudaEvent_t start, stop;
@@ -122,7 +121,7 @@ int main() {
 
     printf("Time elapsed for multihead_attention: %f ms\n", elapsedTime);
     // Process the output tensor as needed (e.g., print, save to a file, etc.)
-    // ...
+ 
 
     cudaFree(query);
     cudaFree(key);
